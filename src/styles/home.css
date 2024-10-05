@@ -1,0 +1,264 @@
+body {
+    margin: 0;
+    font-family: 'Outfit', sans-serif;  
+    background-color: #f7f6fc;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: row; /* Alinear horizontalmente */
+    height: 84vh;
+    background-color: #f7f6fc;
+}
+
+.profile-picture {
+    width: 400px; /* Ajustar según el tamaño que desees */
+    height: 400px;
+    border-radius: 50%; /* Hace que la imagen tenga forma de círculo */
+    overflow: hidden;
+    margin-left: 300px;
+    margin-right: 300px;
+    border: 5px solid black; /* Añade un borde negro */
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alinear el contenido en el centro horizontalmente */
+    justify-content: center; /* Centrar verticalmente si es necesario */
+}
+
+.greeting {
+    font-size: 2rem; /* Ajusta el tamaño del texto según lo desees */
+    font-weight: normal; /* Puedes cambiar esto a bold si lo prefieres */
+    color: #333; /* Color del texto */
+    margin: 0; /* Elimina margen para alinear correctamente */
+    margin-bottom: 10px; /* Añade un poco de espacio debajo */
+    font-weight: 300;
+}
+
+.name {
+    font-size: 3rem; /* Incrementado para hacer el nombre más grande */
+    font-weight: 500;
+    margin: 0;
+}
+
+.position {
+    font-size: 1.5rem; /* Incrementado el tamaño del texto de la posición */
+    color: #777;
+    margin-bottom: 20px; 
+    font-weight: 300;
+}
+
+.buttons {
+    margin-top: 20px;
+    display: flex; /* Asegúrate de que los botones estén en una fila */
+    justify-content: center; /* Centrar los botones */
+}
+
+.button {
+    width: 200px; /* Establece un ancho fijo */
+    padding: 10px 0; /* Ajusta el padding si es necesario */
+    background-color: #333;
+    color: white;
+    border-radius: 25px;
+    margin-right: 10px; /* Esto puede dar un pequeño margen a la derecha */
+    cursor: pointer;
+    font-family: 'Outfit', sans-serif; /* Asegúrate de que también aplique a los botones */
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #555;
+}
+
+.button-outline {
+    background-color: transparent;
+    border: 1px solid #333;
+    color: #333;
+}
+
+.button-outline:hover {
+    background-color: #333;
+    color: white;
+}
+
+.icons {
+    margin-top: 20px; /* Espacio entre los botones y los íconos */
+    display: flex;
+    gap: 20px; /* Espacio entre los iconos */
+    justify-content: center; /* Centrar los íconos */
+}
+
+.icon {
+    font-size: 1.5rem;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.icon:hover {
+    color: #555;
+}
+
+.about-section {
+     /* Espacio superior */
+    text-align: left; /* Alinear texto a la izquierda */
+    width: 80%; /* Limitar el ancho */
+    max-width: 800px; /* Ancho máximo para evitar que el texto se extienda demasiado */
+    margin-left: 220px ; /* Centrar la sección y añadir espacio arriba y abajo */
+    position: relative; /* Asegurarse de que se coloque correctamente en relación con otros elementos */
+    padding-bottom: 20px; /* Espacio inferior */
+}
+
+.about-section h2 {
+    font-size: 3.6rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: inline; /* Mantener en línea con la línea */
+}
+
+.about-section .divider {
+    border: none; /* Sin borde */
+    height: 2px; /* Altura de la línea */
+    background-color: #333; /* Color de la línea */
+    width: 300px; /* Ancho de la línea */
+    display: inline-block; /* Asegurar que esté en la misma línea */
+    margin-left: 10px; /* Espacio a la izquierda de la línea */
+}
+
+.about-section p {
+    font-size: 1.3rem; /* Tamaño del texto */
+    color: #555; /* Color del texto */
+    line-height: 1.5; /* Espaciado entre líneas */
+}
+
+.divider {
+    border: none; /* Sin borde */
+    height: 2px; /* Altura de la línea */
+    background-color: #333; /* Color de la línea */
+    margin: 10px 0; /* Espacio arriba y abajo */
+}
+
+
+/* Sección contenedora para las dos columnas */
+.container-columns {
+    display: flex;
+    justify-content: space-between; /* Coloca las secciones en los extremos */
+    align-items: flex-start; /* Alinea ambas secciones en la parte superior */
+    padding: 0 50px; /* Añade espacio a los lados de la pantalla */
+    margin-top: 20px;
+}
+
+/* Sección "Acerca de mí" */
+.about-section {
+    text-align: left;
+    width: 45%; /* Ancho de la columna izquierda */
+    max-width: 800px;
+    padding-bottom: 20px;
+}
+
+.about-section h2 {
+    font-size: 3.6rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: inline;
+}
+
+.about-section .divider {
+    border: none;
+    height: 2px;
+    background-color: #333;
+    width: 300px;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.about-section p {
+    font-size: 1.3rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Sección contenedora para las dos columnas */
+/* Sección contenedora para las dos columnas */
+.container-columns {
+    display: flex;
+    justify-content: space-between; /* Coloca las secciones en los extremos (izquierda y derecha) */
+    align-items: flex-start; /* Alinea ambas secciones en la parte superior */
+    padding: 0 50px; /* Espaciado lateral */
+    margin-top: 20px;
+}
+
+/* Sección "Acerca de mí" */
+.about-section {
+    text-align: left;
+    width: 45%; /* Ancho de la columna izquierda */
+    max-width: 800px;
+    padding-bottom: 20px;
+}
+
+/* Sección "Proyectos" */
+.projects-section {
+    text-align: left;
+    width: 45%; /* Ancho de la columna derecha */
+    max-width: 800px;
+    padding-bottom: 20px;
+    margin-top: 350px; /* Añadir margen superior para desplazar la sección hacia abajo */
+}
+
+/* Estilos para los títulos y el contenido de ambas secciones */
+.about-section h2, .projects-section h2 {
+    font-size: 3.6rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: inline;
+}
+
+.about-section .divider, .projects-section .divider {
+    border: none;
+    height: 2px;
+    background-color: #333;
+    width: 300px;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.divider {
+    margin-right: 10px;
+}
+
+.about-section p, .projects-section p {
+    font-size: 1.3rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+
+.projects-images {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Alinear verticalmente si es necesario */
+    gap: 40px; /* Espaciado entre las imágenes */
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.projects-images img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    box-shadow: #dddddd 3px 10px 15px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Añade una transición suave */}
+
+.projects-images img:hover {
+    transform: scale(1.1); /* Agranda la imagen al pasar el mouse, 1.1 es un 10% más grande */
+}

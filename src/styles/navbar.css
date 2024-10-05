@@ -1,0 +1,31 @@
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Espacio entre logo y menú */
+    align-items: center; /* Alinear verticalmente */
+    background-color: black; /* Color de fondo negro */
+    padding: 10px 20px; /* Espaciado interno */
+    height: 50px;
+    font-size: 25px;
+    font-weight: 350;
+
+}
+
+
+
+.navbar-menu {
+    list-style: none; /* Elimina los puntos de la lista */
+    display: flex; /* Alinear los elementos en fila */
+    margin-right: 380px; /* Elimina el margen */
+    padding: 0; /* Elimina el padding */
+}
+
+.navbar-item {
+    color: white; /* Color del texto */
+    margin-left: 60px; /* Espacio entre los elementos */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el texto */
+    transition: color 0.3s; /* Transición para el efecto hover */
+}
+
+.navbar-item:hover {
+    color: #ccc; /* Color al pasar el mouse */
+}
