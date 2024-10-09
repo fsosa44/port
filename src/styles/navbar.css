@@ -1,9 +1,9 @@
 .navbar {
     display: flex;
-    justify-content: space-between; /* Espacio entre logo y menú */
-    align-items: center; /* Alinear verticalmente */
-    background-color: black; /* Color de fondo negro */
-    padding: 10px 20px; /* Espaciado interno */
+    justify-content: space-between;
+    align-items: center; 
+    background-color: black; 
+    padding: 10px 20px; 
     height: 50px;
     font-size: 25px;
     font-weight: 350;
@@ -13,19 +13,19 @@
 
 
 .navbar-menu {
-    list-style: none; /* Elimina los puntos de la lista */
-    display: flex; /* Alinear los elementos en fila */
-    margin-right: 380px; /* Elimina el margen */
-    padding: 0; /* Elimina el padding */
+    list-style: none;
+    display: flex;
+    margin-right: 380px; 
+    padding: 0; 
 }
 
 .navbar-item {
-    color: white; /* Color del texto */
-    margin-left: 60px; /* Espacio entre los elementos */
-    cursor: pointer; /* Cambiar el cursor al pasar sobre el texto */
-    transition: color 0.3s; /* Transición para el efecto hover */
+    color: white; 
+    margin-left: 60px; 
+    cursor: pointer; 
+    transition: color 0.3s; 
 }
 
 .navbar-item:hover {
-    color: #ccc; /* Color al pasar el mouse */
+    color: #ccc; 
 }
