@@ -1,23 +1,58 @@
-import React from 'react';
-
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import React, { useState } from 'react';
+import { FaGithub, FaLinkedin, FaTimes } from 'react-icons/fa';
 import profilePic from '../styles/profilePic.png'; 
-import project1 from '../styles/houseofdev.png'
-import project2 from '../styles/fastdelivery.png'
-import project3 from '../styles/barcaGame.png'
+import project1 from '../styles/houseofdev.png';
+import project2 from '../styles/fastdelivery.png';
+import project3 from '../styles/barcaGame.png';
 import '../styles/home.css'; 
-
-import JavaScriptLogo from '../styles/JavaScript-logo.png'
-import ReactLogo from '../styles/react-logo.png'
-import NextLogo from '../styles/next-logo.png'
-import NodeLogo from '../styles/node-logo.png'
-import PostgresLogo from '../styles/postgres-logo.png'
-import sequelizeLogo from '../styles/sequelize-logo.png'
-import ReduxLogo from '../styles/redux-logo.png'
-import cssLogo from '../styles/css-logo.png'
-import htmlLogo from '../styles/html-logo.png'
+import JavaScriptLogo from '../styles/JavaScript-logo.png';
+import ReactLogo from '../styles/react-logo.png';
+import NextLogo from '../styles/next-logo.png';
+import NodeLogo from '../styles/node-logo.png';
+import PostgresLogo from '../styles/postgres-logo.png';
+import sequelizeLogo from '../styles/sequelize-logo.png';
+import ReduxLogo from '../styles/redux-logo.png';
+import cssLogo from '../styles/css-logo.png';
+import htmlLogo from '../styles/html-logo.png';
 
 const Home = () => {
+    const [modalVisible, setModalVisible] = useState(false);
+    const [selectedProject, setSelectedProject] = useState(null);
+
+    const projects = [
+        {
+            id: 1,
+            name: 'House of Dev',
+            image: project1,
+            pageLink: 'https://front-pink-beta.vercel.app/',
+            codeLink: 'https://github.com/fsosa44/houseOfDev',
+        },
+        {
+            id: 2,
+            name: 'Fast Delivery',
+            image: project2,
+            pageLink: 'https://delivery-front-eight.vercel.app/',
+            codeLink: 'https://github.com/fsosa44/fast-delivery-src',
+        },
+        {
+            id: 3,
+            name: 'Barca Game',
+            image: project3,
+            pageLink: 'https://gregarious-entremet-5c511e.netlify.app/',
+            codeLink: 'https://github.com/fsosa44/barca-landingPage',
+        }
+    ];
+
+    const openModal = (project) => {
+        setSelectedProject(project);
+        setModalVisible(true);
+    };
+
+    const closeModal = () => {
+        setModalVisible(false);
+        setSelectedProject(null);
+    };
+
     return (
       <>
         <div className="container">
@@ -31,9 +66,8 @@ const Home = () => {
     
             <div className="buttons">
             <a href="/CV_Francisco_Sosa.pdf" download>
-    <button className="button button-outline">Descargar CV</button>
-  </a>
-            
+              <button className="button button-outline">Descargar CV</button>
+            </a>
             </div>
     
             <div className="icons">
@@ -47,43 +81,62 @@ const Home = () => {
           </div>
         </div>
 
-       
         <div className="container-columns">
-         
           <div id="about-section" className="about-section">
             <h2 id='h1-about'>Acerca de mí</h2>
             <hr className="divider" />
             <p>
-            Soy una persona proactiva, comprometida con el aprendizaje continuo y la mejora de mis habilidades. Destaco por mis sólidas capacidades de comunicación y mi entusiasmo por colaborar en equipo. Me apasiona trabajar en conjunto con otros, ya que considero que la sinergia y el intercambio de ideas son clave para alcanzar resultados exitosos. Estoy siempre dispuesto a enfrentar nuevos desafíos y contribuir al crecimiento del equipo.
+              Soy una persona proactiva, comprometida con el aprendizaje continuo y la mejora de mis habilidades...
             </p>
           </div>
 
-         
           <div id="projects-section" className="projects-section">
             <hr className="divider" />
             <h2>Proyectos</h2>
-            </div>
           </div>
-            <div className="projects-images">
-            <a href="https://front-pink-beta.vercel.app/" target="_blank" rel="noopener noreferrer">
-    <img src={project1} alt="Proyecto 1" />
-  </a>
-               <a href="https://delivery-front-eight.vercel.app/" target="_blank" rel="noopener noreferrer">
-              <img src={project2} alt="Proyecto 2" />
-              </a>
-              <a href="https://gregarious-entremet-5c511e.netlify.app/" target="_blank" rel="noopener noreferrer">
-              <img src={project3} alt="Proyecto 2" />
-              </a>
-
-
-
         </div>
+        
+        <div className="projects-images">
+          {projects.map((project) => (
+            <img
+              key={project.id}
+              src={project.image}
+              alt={project.name}
+              onClick={() => openModal(project)}
+            />
+          ))}
+        </div>
+
+      
+        <div className={`modal ${modalVisible ? 'show' : ''}`}>
+          <div className={`modal-content ${modalVisible ? 'show' : ''}`}>
+            {selectedProject && (
+              <>
+                <div className="modal-header">
+                  <FaTimes className="close-icon" onClick={closeModal} /> 
+                </div>
+                <h3 className='project-name'>{selectedProject.name}</h3>
+                <button className="button button-outline"
+                  onClick={() => window.open(selectedProject.pageLink, '_blank')}
+                >
+                  Ver Página
+                </button>
+                <button className="button button-outline"
+                  onClick={() => window.open(selectedProject.codeLink, '_blank')}
+                >
+                  Ver Código en GitHub
+                </button>
+              </>
+            )}
+          </div>
+        </div>
+
         <div id="skills-section" className="skills-section">
-  <div className="skills-header">
-    <h2>Skills</h2>
-    <hr className="divider-skills" />
-  </div>
- <div className="skills-images">
+          <div className="skills-header">
+            <h2>Skills</h2>
+            <hr className="divider-skills" />
+          </div>
+          <div className="skills-images">
   <div className="skill-item">
     <img src={JavaScriptLogo} alt="Skill 1" className="js-logo" />
     <p>JavaScript</p>
